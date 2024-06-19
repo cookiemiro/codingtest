@@ -7,7 +7,7 @@ public class LoopProblem3 {
         Scanner sc = null;
 
         while (true) {
-            System.out.print("numbers? ");
+            System.out.print("number? ");
             sc = new Scanner(System.in);
             
             int num = sc.nextInt();
