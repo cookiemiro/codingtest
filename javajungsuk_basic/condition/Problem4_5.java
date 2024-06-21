@@ -14,7 +14,7 @@ public class Problem4_5 {
         while (i <= 10) {
             int j = 0;
             while (j <= i) {
-                System.out.println("*");
+                System.out.print("*");
                 j++;
             }
             

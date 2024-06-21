@@ -2,9 +2,8 @@ package javajungsuk_basic.condition;
 
 public class Problem4_4 {
     public static void main(String[] args) {
-        int cnt = 0;
         int sum = 0;
-        int i = 1;
+        int i = 0;
 
         while (sum < 100) {
             if (i % 2 == 0) {
@@ -14,9 +13,10 @@ public class Problem4_4 {
             }
 
             i++;
-            cnt++;
+
+            // System.out.print(i + " ");
         }
 
-        System.out.println(cnt);
+        System.out.println(i);
     }
 }

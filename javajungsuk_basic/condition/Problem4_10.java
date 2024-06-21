@@ -1,10 +1,11 @@
 package javajungsuk_basic.condition;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Problem4_10 {
     public static void main(String[] args) {
-        int answer = 5;
+        int answer = (int)(Math.random()*100) + 1;
         int input = 0;
         int count = 0;
 
@@ -13,6 +14,8 @@ public class Problem4_10 {
         do {
             count++;
             System.out.print("1과 100사이의 값을 입력하세요 :");
+
+
             input = sc.nextInt();
 
             if (answer == input) {
@@ -27,5 +30,9 @@ public class Problem4_10 {
         } while(true);
 
         sc.close();
+    }
+
+    private static boolean isNumber(String input) {
+        return Pattern.matches("^[0~100]", input);
     }
 }
