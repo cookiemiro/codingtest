@@ -1,4 +1,4 @@
-package loop;
+package loop.first;
 
 public class LoopProblem1 {
     public static void main(String[] args) {
