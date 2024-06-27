@@ -27,17 +27,28 @@ public class Prob6 {
 		}
 
 		avg = (double) total / values.length;
+		System.out.println(avg);
 
-		// double[] arr = new double[values.length];
+		double[] arr = new double[values.length];
 
-		// for (int i = 0; i < arr.length; i++) {
-		// 	arr[i] = avg - arr[i];
-		// }
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = Math.abs(avg - values[i]);
+		}
 
-		// double minNum = 0.0;
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
 
-		// for (int i = 0; )
+		double minNum = arr[0];
+		int index = 0;
 
-		
+		for (int i = 0; i < arr.length; i++) {
+			if (minNum > arr[i]) {
+				minNum = arr[i];
+				index = i;
+			}
+		}
+
+		return values[index];
 	}
 }
