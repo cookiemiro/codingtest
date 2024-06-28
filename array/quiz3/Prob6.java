@@ -27,7 +27,6 @@ public class Prob6 {
 		}
 
 		avg = (double) total / values.length;
-		System.out.println(avg);
 
 		double[] arr = new double[values.length];
 
@@ -35,20 +34,28 @@ public class Prob6 {
 			arr[i] = Math.abs(avg - values[i]);
 		}
 
-		for (int i = 0; i < arr.length; i++) {
-			System.out.print(arr[i] + " ");
-		}
-
 		double minNum = arr[0];
-		int index = 0;
-
+		
 		for (int i = 0; i < arr.length; i++) {
-			if (minNum > arr[i]) {
+			if (minNum >= arr[i]) {
 				minNum = arr[i];
-				index = i;
 			}
 		}
 
-		return values[index];
+		int result = 0;
+
+		for (int i = 0; i < arr.length; i++) {
+			if (minNum == arr[i]) {
+				int median = values[i];
+
+				if (median > values[i]) {
+					median = values[i];
+				}
+				result = median;
+			}
+		}
+
+
+		return result;
 	}
 }

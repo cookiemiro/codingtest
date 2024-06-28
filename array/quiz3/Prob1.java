@@ -7,28 +7,30 @@ public class Prob1 {
 		int[] ib = new int[]{1,2,3,4,5};
 		
 		Prob1 p = new Prob1();
-		System.out.println("( �迭 ia )");
+		System.out.println("( 배열 ia )");
 		p.calc(ia);
-		System.out.println("( �迭ib )");
+		System.out.println("( 배열 ib )");
 		p.calc(ib);
 	}
 	
 	public void calc(int[] ix){
 		
-		// �����Ͻÿ�.----------------------------- 
 
-
+			// 홀수 합
+			int oddSum = 0;
 	
-
-
-
-
-
-
-
-
-		//---------------------------------------
-		
+			// 짝수 합
+			int evenSum = 0;
+	
+			for (int num : ix) {
+				if (num % 2 == 0) {
+					evenSum += num;
+				} else {
+					oddSum += num;
+				}
+			}
+	
+			System.out.println("홀수의 합 : " + oddSum);
+			System.out.println("짝수의 합 : " + evenSum);
+		}
 	}
-
-}

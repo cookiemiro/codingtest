@@ -1,8 +1,6 @@
 package array.quiz;
 public class Exam02_0422 {
 	public static void main(String[] args) {
-
-
 		char[][] alphabet = new char[5][5];
 		char start='A';
 		int charToNum = (int) start;
@@ -37,7 +35,6 @@ public class Exam02_0422 {
 			}
 		}
 
-		
 		//4. 수정된 배열 출력
 		System.out.println("	   수정된 배열		");
 		System.out.println("==================================");
@@ -47,7 +44,5 @@ public class Exam02_0422 {
 			}
 			System.out.println();
 		}
-		
-		
 	}
 }
