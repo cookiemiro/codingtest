@@ -8,20 +8,15 @@ public class Test6 {
 
         int n = sc.nextInt();
 
-        for (int i = 0; i < n; i++) {
-            int num = 1;
-            for (int j = 0; j < n - 1 - i; j++) {
-                System.out.print(" ");
-            }
-
-            for (int k = 0; k <= i; k++) {
-                if (i == 0 && num == 1) {
-                    System.out.print(" " + num);
+        for (int i = 1; i <= n; i++) {
+            int cnt = 1;
+            for (int j = 1; j <= (2 * n - 1); j++) {
+                if (j >= 2 * (n - i) + 1 && j % 2 != 0) {
+                    System.out.print(cnt++);
                 } else {
-                    System.out.print(num++ + " ");
+                    System.out.print(" ");
                 }
             }
-
             System.out.println();
         }
 
