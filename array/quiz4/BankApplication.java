@@ -6,6 +6,12 @@ public class BankApplication {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        class Account {
+            public String accountNo;
+            public String accountUser;
+            public int balance;
+        }
+
         Account[] accounts = new Account[100];
         int index = 0;
         
@@ -96,10 +102,4 @@ public class BankApplication {
             }
         }
     }
-}
-
-class Account {
-    public String accountNo;
-    public String accountUser;
-    public int balance;
 }
