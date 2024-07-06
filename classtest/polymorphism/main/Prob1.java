@@ -1,4 +1,7 @@
-package classtest.polymorphism;
+package classtest.polymorphism.main;
+
+import classtest.polymorphism.Bike;
+import classtest.polymorphism.Truck;
 
 public class Prob1 {
     public static void main(String[] args) {
