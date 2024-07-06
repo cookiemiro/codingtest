@@ -25,8 +25,11 @@ public class CarFactory extends Factory implements IWorkingTogether{
 //    abstract class와 interface의 형변환
     @Override
     public int workTogether(IWorkingTogether partner) {
-        Factory otherFactory = (Factory) partner;
-        int additionalOutput = otherFactory.makeProducts('B');
-        return additionalOutput;
+        if (partner instanceof Factory) {
+            Factory otherFactory = (Factory) partner;
+            int additionalOutput = otherFactory.makeProducts('B');
+            return additionalOutput;
+        }
+        return 0;
     }
 }

@@ -18,8 +18,10 @@ public class TVFactory extends Factory implements IWorkingTogether {
 
     @Override
     public int workTogether(IWorkingTogether partner) {
-        Factory otherFactory = (Factory) partner;
-        int additionalOutput = otherFactory.makeProducts('C');
-        return additionalOutput;
+//        pattern variable
+        if (partner instanceof Factory otherFactory) {
+            return otherFactory.makeProducts('C');
+        }
+        return 0;
     }
 }
