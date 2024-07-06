@@ -8,6 +8,7 @@ public class Dog extends Animal{
     @Override
     public void run(int hours) {
         // TODO Auto-generated method stub
-        this.distance = hours;
+        double distance = getSpeed() * hours;
+        setDistance(distance/2);
     }
 }

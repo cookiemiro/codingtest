@@ -17,7 +17,7 @@ public class Video extends Content {
     }
 
     @Override
-    void totalPrice() {
+    public void totalPrice() {
         switch (this.genre) {
             case "new" -> super.setPrice(2000);
             case "comic" -> super.setPrice(1500);

@@ -1,8 +1,21 @@
 package classtest.interfacetest;
 
 public abstract class Animal {
-    int speed;
-    double distance;
+    private int speed;
+    private double distance;
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public void setDistance(double distance) {
+        this.distance += distance;
+    }
+
 
     public Animal(int speed) {
         this.speed = speed;

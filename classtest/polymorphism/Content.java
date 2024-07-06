@@ -10,7 +10,7 @@ public abstract class Content {
         this.title = title;
     }
 
-    abstract void totalPrice();
+    public abstract void totalPrice();
 
     public String getTitle() {
         return title;

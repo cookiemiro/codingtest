@@ -8,12 +8,14 @@ public class Chicken extends Animal implements Cheatable{
     @Override
     public void run(int hours) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'run'");
+        double distance = getSpeed() * hours;
+        setDistance(distance);
     }
 
     @Override
     public void fly() {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'fly'");
+        int speed = getSpeed() * 2;
+        setSpeed(speed);
     }
 }

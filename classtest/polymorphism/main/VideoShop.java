@@ -1,5 +1,8 @@
-package classtest.polymorphism;
+package classtest.polymorphism.main;
 
+
+import classtest.polymorphism.Content;
+import classtest.polymorphism.Video;
 
 public class VideoShop {
 	public static void main(String[] args) {
