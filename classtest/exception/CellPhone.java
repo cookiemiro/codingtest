@@ -9,27 +9,35 @@ public class CellPhone {
   }
 
   public void call(int time) {
-    if (time < 0) {
-      throw new IllegalArgumentException("통화시간입력오류");
-    }
-    this.battery -= time * 0.5;
-    if (this.battery < 0) {
-      this.battery = 0;
-    }
+    try {
+      if (time < 0) {
+        throw new IllegalArgumentException("통화시간입력오류");
+      }
+      this.battery -= time * 0.5;
+      if (this.battery < 0) {
+        this.battery = 0;
+      }
 
-    System.out.println("통화 시간 : " + time + "분");
+      System.out.println("통화 시간 : " + time + "분");
+    } catch (IllegalArgumentException iae) {
+      System.err.println(iae.getMessage());
+    }
   }
 
   public void charge(int time) {
-    if (time < 0) {
-      throw new IllegalArgumentException("충전시간입력오류");
-    }
-    this.battery += time * 3;
-    if (this.battery > 100) {
-      this.battery = 100;
-    }
+    try {
+      if (time < 0) {
+        throw new IllegalArgumentException("충전시간입력오류");
+      }
+      this.battery += time * 3;
+      if (this.battery > 100) {
+        this.battery = 100;
+      }
 
-    System.out.println("충전 시간 : " + time + "분");
+      System.out.println("충전 시간 : " + time + "분");
+    } catch (IllegalArgumentException iae) {
+      System.err.println(iae.getMessage());
+    }
   }
 
   public void printBattery() {
