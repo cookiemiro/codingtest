@@ -2,6 +2,7 @@
   <library name="lombok">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../../../../study/data/lombok.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../study/data/mysql/mysql-connector-java-8.0.21/mysql-connector-java-8.0.21.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
