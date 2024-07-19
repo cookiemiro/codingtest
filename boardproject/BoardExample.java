@@ -4,6 +4,7 @@ import boardproject.service.impl.BoardServiceImpl;
 import boardproject.vo.Board;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class BoardExample {
@@ -65,12 +66,18 @@ public class BoardExample {
           System.out.println("################");
           
 //          NPE를 위한 Optional 처리하기
-          Board board = boardIO.read(bno);
-          System.out.printf("번호: %d\n", board.getBno());
-          System.out.printf("제목: %s\n", board.getBTitle());
-          System.out.printf("내용: %s\n", board.getBContent());
-          System.out.printf("작성자: %s\n", board.getBWriter());
-          System.out.printf("날짜: %s\n", board.getBDate());
+          Board readBoard = boardIO.read(bno);
+          System.out.printf("번호: %d\n", readBoard.getBno());
+          System.out.printf("제목: %s\n", readBoard.getBTitle());
+          System.out.printf("내용: %s\n", readBoard.getBContent());
+          System.out.printf("작성자: %s\n", readBoard.getBWriter());
+          System.out.printf("날짜: %s\n", readBoard.getBDate());
+//          Optional<Board> board = Optional.ofNullable(readBoard);
+//          System.out.printf("번호: %d\n", board.get().getBno());
+//          System.out.printf("제목: %s\n", board.getBTitle());
+//          System.out.printf("내용: %s\n", board.getBContent());
+//          System.out.printf("작성자: %s\n", board.getBWriter());
+//          System.out.printf("날짜: %s\n", board.getBDate());
           System.out.println("################");
 
           System.out.println("보조 메뉴: 1.Update | 2.Delete | 3.List");
@@ -92,9 +99,8 @@ public class BoardExample {
 
               boardIO.update(bno, title, content, writer, strNowDate);
             }
-            case 2 -> {
-              boardIO.delete(bno);
-            }
+            case 2 -> boardIO.delete(bno);
+            case 3 -> {}
           }
 
         }

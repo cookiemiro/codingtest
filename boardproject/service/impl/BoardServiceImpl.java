@@ -136,6 +136,7 @@ public class BoardServiceImpl extends DBConnection implements BoardRepository {
   @Override
   public void clear() {
     connection = super.open();
+//    String query = "DELETE FROM boards";
     String query = "DELETE FROM boards";
 
     try {
