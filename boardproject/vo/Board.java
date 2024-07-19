@@ -1,6 +1,5 @@
-package boardproject;
+package boardproject.vo;
 
-import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

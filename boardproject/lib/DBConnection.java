@@ -1,4 +1,4 @@
-package boardproject;
+package boardproject.lib;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -20,7 +20,7 @@ public abstract class DBConnection {
 
   protected Connection open() {
     try {
-      properties.load(DBConnection.class.getResourceAsStream("../database.properties"));
+      properties.load(DBConnection.class.getResourceAsStream("../../database.properties"));
 
       String driver = properties.getProperty("driver");
       String db_url = properties.getProperty("url");
