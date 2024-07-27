@@ -3,6 +3,13 @@ select concat(e.first_name, ' ', e.last_name) 이름, d.department_id 부서번�
 from employees e, departments d
 where e.department_id = d.department_id;
 
+-- 모든 사원이기 때문에 outer join으로 변경
+select concat(e.first_name, ' ', last_name) as 이름, d.department_id as 부서번호, d.department_name as 부서이름
+-- select *
+from employees e left outer join departments d on e.department_id = d.department_id
+where e.department_id is null
+order by e.employee_id;
+
 -- 2.
 select departments.department_name, departments.department_id, locations.city
 from locations, departments
@@ -39,7 +46,26 @@ select * from employees;
 -- 7.
 select * from employees where manager_id is null order by employee_id;
 
--- 8.
--- select 
--- from employees e, departments d
--- where 
+-- 8. 지정한 사원의 이름, 부서 번호와 지정한 사원과 동일한 부서에서 근무하는 모든 사원을 조회하세요.
+-- select concat(e2.first_name, ' ', e2.last_name) as 지정사원이름, e2.department_id,  concat(e1.first_name, ' ', e1.last_name) as 같은부서사원
+-- from employees e1
+-- where e1.department_id = (
+-- 	select department_id
+--     from employees e2
+--     where e2.last_name = 'Kochhar'
+-- );
+
+select concat(e1.first_name, ' ', e1.last_name) as 지정사원이름, e1.department_id,  concat(e2.first_name, ' ', e2.last_name) as 같은부서사원
+-- select *
+from employees e1, employees e2
+where e1.last_name = 'Kochhar' and e1.department_id = e2.department_id and e1.last_name <> e2.last_name;
+
+select * from employees where department_id = 90;
+
+-- 9. Job_grades 테이블을 생성하고 모든 사원의 이름, 업무, 부서이름, 급여, 급여등급을 조회하세요.
+select * from job_grades;
+
+select concat(e.first_name, ' ', e.last_name) as 이름, j.job_title 업무, d.department_name 부서이름, jg.grade_level 금여등급
+from employees e, departments d, jobs j, job_grades jg
+where e.department_id = d.department_id and e.job_id = j.job_id and e.salary between jg.lowest_sal and jg.highest_sal
+order by jg.grade_level desc;
